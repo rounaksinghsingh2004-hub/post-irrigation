@@ -18,7 +18,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/post-irrigation-import
-          cat upload/chunk-*.b64 | base64 --decode | tar -xz -C /tmp/post-irrigation-import
+          cat upload/chunk-*.b64 | base64 --decode | tar -xJ -C /tmp/post-irrigation-import
           cp -a /tmp/post-irrigation-import/. .
           rm -rf upload
           rm -f .github/workflows/import-project.yml
